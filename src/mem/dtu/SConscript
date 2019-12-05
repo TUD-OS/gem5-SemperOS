@@ -1,0 +1,60 @@
+# Copyright (c) 2015 Christian Menard
+# Copyright (c) 2015 Nils Asmussen
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice, this
+#    list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+#    this list of conditions and the following disclaimer in the documentation
+#    and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# The views and conclusions contained in the software and documentation are those
+# of the authors and should not be interpreted as representing official policies,
+# either expressed or implied, of the FreeBSD Project.
+
+Import('*')
+
+SimObject('Dtu.py')
+
+Source('dtu.cc')
+Source('base.cc')
+Source('regfile.cc')
+Source('msg_unit.cc')
+Source('mem_unit.cc')
+Source('xfer_unit.cc')
+Source('pt_unit.cc')
+Source('tlb.cc')
+
+DebugFlag('Dtu')
+DebugFlag('DtuBuf')
+DebugFlag('DtuCmd')
+DebugFlag('DtuCredits')
+DebugFlag('DtuMasterPort')
+DebugFlag('DtuPackets')
+DebugFlag('DtuPower')
+DebugFlag('DtuSysCalls')
+DebugFlag('DtuRegRead')
+DebugFlag('DtuRegWrite')
+DebugFlag('DtuRegRange')
+DebugFlag('DtuSlavePort')
+DebugFlag('DtuXfers')
+DebugFlag('DtuTlb')
+DebugFlag('DtuPf')
+DebugFlag('DtuMem')
+DebugFlag('DtuMemWatch')
+
+CompoundFlag('DtuReg', [ 'DtuRegRead', 'DtuRegWrite' ])
